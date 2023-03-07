@@ -14,11 +14,11 @@ pinata
   });
 */
 
-const fs = require("fs");
-const readableStreamForFile = fs.createReadStream("./yourfile.png");
+import fs from "fs";
+const readableStreamForFile = fs.createReadStream("./metadata/images/10.jfif");
 const options = {
   pinataMetadata: {
-    name: MyCustomName,
+    name: "Art 10",
     keyvalues: {
       customKey: "customValue",
       customKey2: "customValue2",
