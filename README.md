@@ -5,7 +5,7 @@
 - [Technologies Included](#technologies-included)
 - [Install and run](#install-and-run)
 - [Hardhat Setup](#hardhat-setup)
-- [A Typical Top Level Directory]
+- [A Typical Top Level Directory](#a-typical-top-level-directory)
 
 ## Task Description
 
