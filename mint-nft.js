@@ -1,5 +1,4 @@
 import dotenv from "dotenv/config";
-
 import { createAlchemyWeb3 } from "@alch/alchemy-web3";
 const web3 = createAlchemyWeb3(process.env.INFURA_API_URL);
 
