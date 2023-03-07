@@ -106,6 +106,7 @@ Smart contract deployed on goerli testnet: 0xA8Da889eFeb4C5477a3B096Fa337E251456
 
 ## A Typical Top Level Directory
 
+.
 ├── contracts/ # Solidity smart contracts
 ├── scripts/ # Scripts to deploy and verify smart contracts
 ├── test/ # Test scripts for smart contracts
