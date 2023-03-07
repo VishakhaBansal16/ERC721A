@@ -8,7 +8,7 @@ import { ABI } from "./ABI.js";
 const contractAddress = "0xA8Da889eFeb4C5477a3B096Fa337E251456D3Cd0";
 const nftContract = new web3.eth.Contract(ABI, contractAddress);
 //create transaction
-export const init = async (tokenURI) => {
+export const init = async (quantity) => {
   const nonce = await web3.eth.getTransactionCount(
     process.env.PUBLIC_KEY,
     "latest"
@@ -20,9 +20,7 @@ export const init = async (tokenURI) => {
     to: contractAddress,
     nonce: nonce,
     gas: 500000,
-    data: nftContract.methods
-      .mintNFT(process.env.PUBLIC_KEY, tokenURI)
-      .encodeABI(),
+    data: nftContract.methods.mint(quantity).encodeABI(),
   };
 
   const signPromise = web3.eth.accounts.signTransaction(
