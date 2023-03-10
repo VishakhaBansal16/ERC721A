@@ -146,7 +146,7 @@ Your images and json folder will be uploaded as shown below:
 
 After hitting mint API on postman, the minted NFTs will be visible on opensea
 
-![uploaded json folder image](./pinata_images/openSea.png?raw=true "Optional Title")
+![uploaded nfts on opensea ](./pinata_images/openSea.png?raw=true "Optional Title")
 
 ## A Typical Top Level Directory
 
