@@ -140,19 +140,13 @@ node pinata.js
 
 Your images and json folder will be uploaded as shown below:
 
-```
 ![uploaded images](./pinata_images/artImages.png?raw=true "Optional Title")
-```
 
-```
 ![uploaded json folder image](./pinata_images/jsonFolder.png?raw=true "Optional Title")
-```
 
 After hitting mint API on postman, the minted NFTs will be visible on opensea
 
-```
 ![uploaded json folder image](./pinata_images/jsonFolder.png?raw=true "Optional Title")
-```
 
 ## A Typical Top Level Directory
 
