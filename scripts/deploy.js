@@ -1,6 +1,6 @@
 require("@nomiclabs/hardhat-ethers");
 async function main() {
-  const MyNFT = await ethers.getContractFactory("MyNFT");
+  const MyNFT = await ethers.getContractFactory("MyNFTContract");
 
   const myNFT = await MyNFT.deploy();
   await myNFT.deployed();
