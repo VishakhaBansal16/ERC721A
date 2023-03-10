@@ -169,4 +169,4 @@ Expecting Test result.
 
 ```
 
-![uploaded json folder image](/Users/EXPERT/OneDrive/Desktop/development/pinata_images/jsonFolder.png?raw=true "Optional Title")
+![uploaded json folder image](./pinata_images/jsonFolder.png?raw=true "Optional Title")
