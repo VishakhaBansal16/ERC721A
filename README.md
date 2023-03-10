@@ -168,3 +168,5 @@ Expecting Test result.
 └─ route.js
 
 ```
+
+![uploaded json folder image](/Users/EXPERT/OneDrive/Desktop/development/pinata_images/jsonFolder.png?raw=true "Optional Title")
