@@ -195,6 +195,19 @@ export const ABI = [
     type: "event",
   },
   {
+    inputs: [],
+    name: "_baseTokenURI",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "uint256",
@@ -270,6 +283,19 @@ export const ABI = [
     type: "function",
   },
   {
+    inputs: [],
+    name: "base_URI",
+    outputs: [
+      {
+        internalType: "string",
+        name: "",
+        type: "string",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "uint256",
@@ -327,6 +353,11 @@ export const ABI = [
   },
   {
     inputs: [
+      {
+        internalType: "address",
+        name: "minter",
+        type: "address",
+      },
       {
         internalType: "uint256",
         name: "quantity",

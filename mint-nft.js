@@ -1,45 +1,27 @@
 import dotenv from "dotenv/config";
 import { createAlchemyWeb3 } from "@alch/alchemy-web3";
-const web3 = createAlchemyWeb3(process.env.INFURA_API_URL);
-
 import { ABI } from "./ABI.js";
+const web3 = createAlchemyWeb3(process.env.INFURA_API_URL);
+const contractAddress = "0xf1120C2CeeB7c87fa5A86B97909188F3f5c9310A";
+const myContract = new web3.eth.Contract(ABI, contractAddress);
 
-const contractAddress = "0xA8Da889eFeb4C5477a3B096Fa337E251456D3Cd0";
-const nftContract = new web3.eth.Contract(ABI, contractAddress);
-//create transaction
-export const init = async (quantity) => {
-  const nonce = await web3.eth.getTransactionCount(
-    process.env.PUBLIC_KEY,
-    "latest"
-  ); //get latest nonce
-
-  //the transaction
-  const tx = {
-    from: process.env.PUBLIC_KEY,
-    to: contractAddress,
-    nonce: nonce,
-    gas: 500000,
-    data: nftContract.methods.mint(quantity).encodeABI(),
-  };
-
-  const signPromise = web3.eth.accounts.signTransaction(
-    tx,
+//mint
+export const init = async (address, amount) => {
+  const tx = myContract.methods.mint(address, amount);
+  const gas = await tx.estimateGas({ from: address });
+  const gasPrice = await web3.eth.getGasPrice();
+  const data = tx.encodeABI();
+  const nonce = await web3.eth.getTransactionCount(address);
+  const signedTx = await web3.eth.accounts.signTransaction(
+    {
+      to: myContract.options.address,
+      data,
+      gas,
+      gasPrice,
+      nonce,
+    },
     process.env.PRIVATE_KEY
   );
-  signPromise
-    .then((signedTx) => {
-      web3.eth.sendSignedTransaction(
-        signedTx.rawTransaction,
-        function (err, hash) {
-          if (!err) {
-            console.log("The hash of your transaction is: ", hash);
-          } else {
-            console.log(err);
-          }
-        }
-      );
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  const receipt = await web3.eth.sendSignedTransaction(signedTx.rawTransaction);
+  console.log(`Transaction hash: ${receipt.transactionHash}`);
 };
